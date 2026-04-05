@@ -20,11 +20,7 @@ class CofeeMaker:
         can_make = True
         for item in drink.ingredients:
             if drink.ingredients[item] > self.resources[item]:
-<<<<<<< HEAD
-                print("Sorry, there is not enough {item}")
-=======
                 print(f"Sorry, there is not enough {item}")
->>>>>>> 359da05 (feat: cofee machine oop in python)
                 can_make = False
         return can_make
     
