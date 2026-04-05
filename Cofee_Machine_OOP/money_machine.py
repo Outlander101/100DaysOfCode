@@ -34,14 +34,6 @@ class MoneyMachine:
             self.money_received = 0
             return True
         else:
-<<<<<<< HEAD
-            print("Sorry that's not enough money. Money refunded.")
-=======
-<<<<<<< HEAD
-            print("Sorry that's not enough money. Money refunded.")
-=======
             print(f"Sorry that's not enough money, need ${round(cost - self.money_received, 2)}. Money refunded.")
->>>>>>> 5954399 (feat: cofee machine oop in python)
->>>>>>> 359da05 (feat: cofee machine oop in python)
             self.money_received = 0
             return False
