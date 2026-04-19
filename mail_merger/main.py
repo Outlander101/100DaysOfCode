@@ -17,12 +17,12 @@ def readNames(path):
         print(f"Invalid Path '{path}'")
         return
 
-def create_letters(path, data):
+def create_letters(path, name_list):
     if os.path.isfile(LETTER_PATH):
         with open(LETTER_PATH) as letter:
             try:
                 letter_content = letter.read()
-                for name in data:
+                for name in name_list:
                     stripped_name = name.strip()
                     new_letter = letter_content.replace(PLACEHOLDER, stripped_name)
                     with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.docx", mode='w') as letters:
