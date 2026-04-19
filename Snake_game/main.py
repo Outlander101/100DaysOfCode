@@ -40,12 +40,16 @@ def main():
 
         # Detect collisions between Snake and Walls
         if abs(snake_g.head.xcor()) >= WALL_CORD or abs(snake_g.head.ycor()) >= WALL_CORD:
+            scoreboard_g.reset()
+            snake_g.reset()
             is_game_on = False
             scoreboard_g.game_over()
         
         # Detect collisions between Snake head and tail
         for body in snake_g.full_body[1:]:            
             if snake_g.head.distance(body) < CORD_CLOSENESS:
+                scoreboard_g.reset()
+                snake_g.reset()
                 is_game_on = False
                 scoreboard_g.game_over()
 

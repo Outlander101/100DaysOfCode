@@ -6,6 +6,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+CLOSURE_POSITION = (-1000,1000)
 
 class Snake:
 
@@ -54,3 +55,9 @@ class Snake:
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
 
+    def reset(self):
+        for body in self.full_body:
+            body.goto(CLOSURE_POSITION)
+        self.full_body.clear()
+        self.create_snake()
+        self.head = self.full_body[0]
