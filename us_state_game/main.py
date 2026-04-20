@@ -30,11 +30,11 @@ def main():
             guessed_state = screen.textinput(title=f"{len(guessed_states)}/{TOTAL_STATES} State Correct", prompt="Guess anothr State").title()
 
             if guessed_state == EXIT_KEY:
-                missed_states = []
-                for state in all_states:
-                    if state not in guessed_states:
-                        missed_states.append(state)
-
+                # missed_states = []
+                # for state in all_states:
+                #     if state not in guessed_states:
+                #         missed_states.append(state)
+                missed_states = [state for state in all_states if state not in guessed_states]
                 df = pandas.DataFrame(missed_states)
                 df.to_csv(MISSING_STATES_CSV)
                 break
