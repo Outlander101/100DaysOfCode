@@ -6,6 +6,7 @@ PRIM_FUR_COLOR = "Primary Fur Color"
 
 def squirrel_count(series, color):
     return len(series[series[PRIM_FUR_COLOR] == color])
+    # return len(series[series.PRIM_FUR_COLOR] == color])
 
 def main():
     if os.path.isfile(CENSUS_FILE_CSV):
